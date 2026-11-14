@@ -1,0 +1,15 @@
+{
+  "name": "Blacklord Green-Chair Theme",
+  "target": "Pterodactyl Panel 1.15.2",
+  "type": "source-overrides",
+  "companyNameChanged": false,
+  "environmentOnlyModeRequired": true,
+  "assets": [
+    "dashboard-background-2600169.css",
+    "dashboard-background-2600169.png",
+    "luxury-reference-chair.jpg",
+    "luxury-reference-login.css",
+    "server-card-green-glow.css",
+    "server-console-power-green.css"
+  ]
+}

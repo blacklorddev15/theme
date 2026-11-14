@@ -1,0 +1,19 @@
+/* Visual-only override for the three power controls on server console pages. */
+body.bg-neutral-800 #app div.flex.sm\:justify-end.space-x-2 > button {
+    background: linear-gradient(115deg, #168c47 0%, #19aa55 55%, #29c76b 100%) !important;
+    border-color: #39d879 !important;
+    color: #f2fff6 !important;
+    box-shadow: 0 2px 10px rgba(30, 210, 105, .28), inset 0 1px 0 rgba(255, 255, 255, .16) !important;
+    transition: filter .18s ease, box-shadow .18s ease !important;
+}
+
+body.bg-neutral-800 #app div.flex.sm\:justify-end.space-x-2 > button:hover:not(:disabled),
+body.bg-neutral-800 #app div.flex.sm\:justify-end.space-x-2 > button:focus-visible {
+    background: linear-gradient(115deg, #1ba653 0%, #20bd61 55%, #39db7a 100%) !important;
+    border-color: #68ee9c !important;
+    box-shadow: 0 0 0 2px rgba(104, 238, 156, .22), 0 3px 14px rgba(30, 210, 105, .4), inset 0 1px 0 rgba(255, 255, 255, .2) !important;
+}
+
+body.bg-neutral-800 #app div.flex.sm\:justify-end.space-x-2 > button:active:not(:disabled) {
+    filter: brightness(.94);
+}

@@ -1,0 +1,8 @@
+/* Signed-in panel background only; login styles and assets are separate. */
+body.bg-neutral-800 {
+    background: linear-gradient(rgba(0, 0, 0, .20), rgba(0, 0, 0, .20)), url('/assets/dashboard-background-2600169.png') center top / cover no-repeat fixed !important;
+}
+/* The admin layout uses light text, so retain a dark contrast overlay. */
+body.skin-blue .content-wrapper {
+    background: linear-gradient(rgba(0, 0, 0, .40), rgba(0, 0, 0, .40)), url('/assets/dashboard-background-2600169.png') center top / cover no-repeat fixed !important;
+}
