@@ -1,0 +1,43 @@
+{
+  "name": "Blacklord Signed-in Theme",
+  "repository": "blacklorddev15/theme",
+  "version": "2026.11.17.1",
+  "files": {
+    "install-theme.py": {
+      "size": 19113,
+      "sha256": "a47b924f913cd618b4759360486aaa52a598e1620b87c5d263b466972a7133b0"
+    },
+    "assets/james-admin.css": {
+      "size": 1385,
+      "sha256": "1eb747e3b9f0941f0f38ce6977a2e219e8920aa0771aa29328e6004520337820"
+    },
+    "assets/james-signed-in.css": {
+      "size": 10191,
+      "sha256": "2f84e5781ef94b930e04f8cb66a2c880264217a1c479a0bb151cb567b5035a8c"
+    },
+    "assets/james-store-background.jpg": {
+      "size": 137833,
+      "sha256": "2bc08fa2792375e98f9a5057d133a0f153a9e93f22b9ec9b8f49b543ad07ca29"
+    },
+    "assets/panel-theme.css": {
+      "size": 1949,
+      "sha256": "af1c38b3a13d4c3270fa30a445d83f4530c22ff74da575bf64e698ce3d8dd69e"
+    },
+    "assets/panel-theme.js": {
+      "size": 4511,
+      "sha256": "b182519b0d90bc212914c3768ec73d6531330681566c0ff257ae7eb8d7ad4b00"
+    },
+    "panel/PanelThemeController.php": {
+      "size": 3605,
+      "sha256": "81d3dec02255cc1a3ca0d87d938ed8c9506eb8636ffd7a1c0cbf5d97ff493556"
+    },
+    "panel/panel-theme.blade.php": {
+      "size": 3624,
+      "sha256": "1a0267b1744448f5f053246cd823d54fe999458ad4881a19121e2161cc3232e4"
+    },
+    "patches/company-name-only-settings-provider.patch": {
+      "size": 1134,
+      "sha256": "f360a5f22e0e9331857c7e8d89d7de511f51eaa0f9e95613499782eeaf4c88cb"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+/* Dynamic signed-in panel theme; loaded only in authenticated client/admin layouts. */
+:root {
+    --panel-theme-primary: #ffff00;
+    --panel-theme-secondary: #00ff00;
+    --accent-rgb: 255, 255, 0;
+    --accent2-rgb: 0, 255, 0;
+    --accent: rgb(255, 255, 0);
+    --accent2: rgb(0, 255, 0);
+    --glow: rgba(255, 255, 0, .35);
+    --line: rgba(255, 255, 0, .38);
+}
+
+/* The client theme already consumes these accent variables for its glows and controls. */
+body.skin-blue .main-header .navbar,
+body.skin-blue .main-header .logo,
+body.skin-blue .main-sidebar,
+body.skin-blue .main-footer {
+    border-color: rgba(var(--accent-rgb), .38) !important;
+}
+body.skin-blue .main-header .navbar .sidebar-toggle:hover,
+body.skin-blue .sidebar-menu > li.active > a,
+body.skin-blue .sidebar-menu > li:hover > a {
+    border-left-color: var(--panel-theme-primary) !important;
+}
+body.skin-blue .box {
+    border-color: rgba(var(--accent-rgb), .38) !important;
+    box-shadow: 0 0 18px rgba(var(--accent-rgb), .12) !important;
+}
+body.skin-blue .box.box-primary {
+    border-top-color: var(--panel-theme-primary) !important;
+}
+body.skin-blue .box-header.with-border {
+    border-bottom-color: rgba(var(--accent-rgb), .32) !important;
+}
+body.skin-blue input:not([type=checkbox]):not([type=radio]):focus,
+body.skin-blue textarea:focus,
+body.skin-blue select:focus {
+    border-color: var(--panel-theme-primary) !important;
+    box-shadow: 0 0 0 2px rgba(var(--accent-rgb), .2) !important;
+}
+body.skin-blue .btn-primary,
+body.skin-blue .btn-primary:hover,
+body.skin-blue .btn-primary:focus {
+    background: linear-gradient(115deg, var(--panel-theme-primary), var(--panel-theme-secondary)) !important;
+    border-color: rgba(var(--accent-rgb), .7) !important;
+    color: #101010 !important;
+}
+#app [class*="border-yellow-"],
+#app [class*="text-yellow-"] {
+    border-color: var(--panel-theme-primary) !important;
+    color: var(--panel-theme-primary) !important;
+}

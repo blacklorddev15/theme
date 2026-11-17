@@ -1,0 +1,24 @@
+diff --git a/app/Providers/SettingsServiceProvider.php b/app/Providers/SettingsServiceProvider.php
+--- a/app/Providers/SettingsServiceProvider.php
++++ b/app/Providers/SettingsServiceProvider.php
+@@ -59,6 +59,20 @@
+      */
+     public function boot(ConfigRepository $config, Encrypter $encrypter, Log $log, SettingsRepositoryInterface $settings): void
+     {
++        // In environment-only mode, load only the Company Name from the database.
++        if ($config->get('pterodactyl.load_environment_only', false)) {
++            try {
++                $value = $settings->get('settings::app:name', $config->get('app.name'));
++            } catch (QueryException $exception) {
++                $log->notice('A query exception was encountered while trying to load the company name from the database: ' . $exception->getMessage());
++                return;
++            }
++
++            $config->set('app.name', $value);
++
++            return;
++        }
++
+         // Only set the email driver settings from the database if we
+         // are configured using SMTP as the driver.
+         if ($config->get('mail.default') === 'smtp') {

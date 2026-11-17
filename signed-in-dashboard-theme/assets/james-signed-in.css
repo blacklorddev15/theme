@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-image: url("/assets/james-store-background.jpg");
+  --accent-rgb: 255, 255, 0;
+  --accent2-rgb: 0, 255, 0;
+  --accent: rgb(var(--accent-rgb));
+  --accent2: rgb(var(--accent2-rgb));
+  --glow: rgba(var(--accent-rgb), 0.35);
+  --glass: rgba(18, 10, 38, 0.55);
+  --glass-strong: rgba(12, 6, 28, 0.88);
+  --line: rgba(var(--accent-rgb), 0.38);
+  --text: #ece7fa;
+  --radius: 22px;
+}
+
+html, body, #app { font-family: 'Rajdhani', 'Roboto', sans-serif; color: var(--text); }
+#app :is(button, input, select) { font-family: inherit; }
+
+body,
+body.bg-neutral-800, body.bg-neutral-50, body.bg-gray-800, body.bg-gray-50 {
+  background:
+    linear-gradient(180deg, rgba(5, 3, 15, 0.5), rgba(5, 3, 15, 0.85)),
+    var(--bg-image),
+    radial-gradient(circle at 50% 0%, #2a1065 0%, #0a0620 55%, #03020a 100%) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+}
+#app { background: transparent !important; padding-bottom: 104px; }
+* { scrollbar-width: thin; scrollbar-color: rgba(var(--accent-rgb), 0.6) transparent; }
+#app :is(h1, h2) { letter-spacing: 0.12em; text-transform: uppercase; }
+
+#app .w-full.shadow-md.overflow-x-auto:is(.bg-gray-900, .bg-neutral-900) {
+  position: fixed !important;
+  top: auto !important;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: auto !important;
+  z-index: 50;
+  overflow: hidden !important;
+  background: var(--glass) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 0 26px var(--glow) !important;
+}
+#app .w-full.shadow-md.overflow-x-auto:is(.bg-gray-900, .bg-neutral-900) > div {
+  max-width: none !important;
+  height: 4rem !important;
+  padding: 0 6px;
+}
+#logo { display: none !important; }
+
+#app [class*="RightNavigation"] { width: 100%; justify-content: space-around !important; }
+#app [class*="RightNavigation"] > a,
+#app [class*="RightNavigation"] > button,
+#app [class*="RightNavigation"] > .navigation-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  height: auto !important;
+  margin: 8px 4px;
+  padding: 0 !important;
+  border-radius: 18px;
+  color: rgba(236, 231, 250, 0.7) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: background 0.15s, box-shadow 0.15s, color 0.15s;
+}
+#app [class*="RightNavigation"] > a:hover,
+#app [class*="RightNavigation"] > a.active,
+#app [class*="RightNavigation"] > button:hover,
+#app [class*="RightNavigation"] > .navigation-link:hover {
+  color: #fff !important;
+  background: rgba(var(--accent-rgb), 0.2) !important;
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.65), 0 0 16px var(--glow) !important;
+}
+
+@media (min-width: 768px) {
+  #app .w-full.shadow-md.overflow-x-auto:is(.bg-gray-900, .bg-neutral-900) {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(520px, 90vw) !important;
+  }
+}
+
+#app :is(.bg-gray-700, .bg-neutral-700) { background: var(--glass) !important; }
+#app :is(.bg-gray-700, .bg-neutral-700):is(.rounded, .shadow-md) {
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+#app :is(.bg-gray-900, .bg-neutral-900):not(.overflow-x-auto) { background: rgba(0, 0, 0, 0.28) !important; }
+#app :is(.bg-gray-600, .bg-neutral-600) {
+  background: rgba(var(--accent-rgb), 0.16) !important;
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+}
+
+#app .grey-row-box {
+  background: var(--glass) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  padding: 1.1rem 1.25rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+#app a.grey-row-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 22px var(--glow);
+}
+#app .grey-row-box .icon {
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.75), rgba(var(--accent2-rgb), 0.55)) !important;
+  box-shadow: 0 0 16px var(--glow);
+}
+#app .grey-row-box p { font-weight: 600; letter-spacing: 0.03em; }
+#app .grey-row-box .status-bar { border-radius: 999px; }
+
+#app [class*="SubNavigation"] {
+  background: rgba(8, 4, 20, 0.45) !important;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none !important;
+}
+#app [class*="SubNavigation"] a:hover,
+#app [class*="SubNavigation"] a.active {
+  color: #fff !important;
+  box-shadow: inset 0 -2px var(--accent) !important;
+}
+#terminal, #terminal .xterm-viewport, #terminal .xterm-screen { background: transparent !important; }
+
+#app :is(input[type="text"], input[type="password"], input[type="email"],
+         input[type="number"], input[type="search"], select):not([placeholder*="command" i]) {
+  background: rgba(8, 4, 20, 0.6) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+  color: var(--text) !important;
+}
+#app :is(input, select):not([placeholder*="command" i]):focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25) !important;
+  outline: none;
+}
+#app button[type="submit"] {
+  background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px var(--glow);
+}
+
+/* NEON-FIX-V2 */
+html body { display: flex !important; flex-direction: column; }
+html body #ng-header {
+  position: sticky !important;
+  top: 12px !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  order: -1;
+  width: auto !important;
+  margin: 12px 12px 0 !important;
+  padding: 12px 14px !important;
+}
+html.ng-on body #app { padding-top: 0 !important; }
+@media (min-width: 768px) {
+  html body #ng-header { width: min(720px, 92vw) !important; margin: 12px auto 0 !important; }
+}
+html body #ng-title { font-size: 1.1rem !important; letter-spacing: .26em !important; }
+html body #ng-sub { font-size: .95rem !important; }
+html body #ng-header .ib {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 14px !important;
+  font-size: 1.05rem !important;
+}
+html body #app .w-full.shadow-md.overflow-x-auto:is(.bg-gray-900, .bg-neutral-900) {
+  height: 72px !important;
+  min-height: 0 !important;
+  max-height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+html body #app .w-full.shadow-md.overflow-x-auto:is(.bg-gray-900, .bg-neutral-900) > div {
+  flex: 1 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 6px !important;
+  max-width: none !important;
+}
+html body #app [class*="GreyRowBox"] {
+  background: var(--glass) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  padding: 1.1rem 1.25rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+html body #app a[class*="GreyRowBox"]:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 22px var(--glow);
+}
+html body #app [class*="GreyRowBox"] > .icon {
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), .75), rgba(var(--accent2-rgb), .55)) !important;
+  box-shadow: 0 0 16px var(--glow);
+}
+html body #app [class*="GreyRowBox"] p { font-weight: 600; letter-spacing: .03em; }
+
+/* Adapted header. This is inside the authenticated application layout only. */
+body.bg-neutral-800 #ng-header { position:sticky; top:12px; z-index:40; padding:12px 14px; border-radius:24px; background:var(--glass); border:1px solid var(--line); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); box-shadow:0 0 26px var(--glow); color:var(--text); font-family:Rajdhani,Roboto,sans-serif; }
+body.bg-neutral-800 #ng-title { font-weight:700; font-style:italic; text-transform:uppercase; line-height:1.25; }
+body.bg-neutral-800 #ng-title b { background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+body.bg-neutral-800 #ng-sub { opacity:.8; margin-top:2px; }
+body.bg-neutral-800 #app [class*="RightNavigation"] { flex:1 1 100% !important; width:100% !important; max-width:none !important; margin:0 !important; }
+/* Keep status indicators and power actions intact; styling only. */
+body.bg-neutral-800 #app a[class*="ServerRow__StatusIndicatorBox"] { background:rgba(18,10,38,.72) !important; border:1px solid rgba(255,255,0,.45) !important; border-radius:22px !important; box-shadow:0 0 18px rgba(255,255,0,.19), 0 10px 30px rgba(0,0,0,.35) !important; }
+body.bg-neutral-800 #app a[class*="ServerRow__StatusIndicatorBox"]:hover { border-color:#eaff00 !important; box-shadow:0 0 22px rgba(204,255,0,.45) !important; }
+body.bg-neutral-800 #app div.flex.sm\:justify-end.space-x-2 > button { background:linear-gradient(115deg,#168c47,#19aa55,#29c76b) !important; border-color:#39d879 !important; color:#f2fff6 !important; border-radius:8px !important; }
+body.bg-neutral-800 #app div.flex.sm\:justify-end.space-x-2 > button:disabled { opacity:.55; }
+/* Avoid covering the last content row with the fixed bottom navigation. */
+@media(max-width:767px) { body.bg-neutral-800 #app { padding-bottom:110px !important; } }
+/* Keep the loading indicator available without giving it half of the dock width. */
+body.bg-neutral-800 #app .w-full.shadow-md.overflow-x-auto > [class*="Fade__Container"] { flex:0 0 0 !important; width:0 !important; padding:0 !important; }
